@@ -15,6 +15,7 @@ The interface of the application is just like the Bash shell except that this ha
 This command line interpreter serves as the frontend of the web app where users can interact with the backend which was developed with python OOP programming.
 
 Some of the commands available are:
+<<<<<<< HEAD
 how
 
 create
@@ -72,3 +73,5 @@ $ command2 argument1
 output of command2 with given argument
 
 ...
+=======
+>>>>>>> 15e2f6458e0cb33b1eb43676d6918acb78dd084f
