@@ -165,7 +165,7 @@ class HBNBCommand(cmd.Cmd):
                 matches = [
                     k for k in storage.all() if k.startswith(
                         words[0] + '.')]
-                    print(len(matches))
+                print(len(matches))
 
         def do_update(self, line):
             """Updates an instance by adding or updating attribute.
