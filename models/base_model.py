@@ -41,13 +41,8 @@ class BaseModel:
             format(type(self).__name__, self.id, self.__dict__)
 
     def save(self):
-        """returns a dictionary containing all keys/values of __dict__"""
-
-        my_dict = self.__dict__.copy()
-        my_dict["__class__"] = type(self).__name__
-        my_dict["created_at"] = my_dict["created_at"].isoformat()
-        my_dict["updated_at"] = my_dict["updated_at"].isoformat()
-        return my_dict
+        """Updates the public instance attribute 'updated_at'"""
+        self.updated_at = datetime.now()
 
     def to_dict(self):
         """returns a dictionary containing all keys/values of __dict__"""
