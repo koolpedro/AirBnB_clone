@@ -52,7 +52,7 @@ class FileStorage:
         with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
             obj_dict = json.load(f)
             obj_dict = {k: self.classes()[v["__class__"]](**v)
-                    for k, v in obj_dict.items()}
+                        for k, v in obj_dict.items()}
             # TODO: should this overwrite or insert?
             FileStorage.__objects = obj_dict
 
@@ -60,23 +60,23 @@ class FileStorage:
         """Returns the valid attributes and their types for classname"""
         attributes = {
             "BaseModel":
-                    {"id": str,
+                {"id": str,
                     "created_at": datetime.datetime,
                     "updated_at": datetime.datetime},
             "User":
-                    {"email": str,
+                {"email": str,
                     "password": str,
                     "first_name": str,
                     "last_name": str},
             "State":
-                    {"name": str},
+                {"name": str},
             "City":
-                    {"state_id": str,
+                {"state_id": str,
                     "name": str},
             "Amenity":
-                    {"name": str},
+                {"name": str},
             "Place":
-                    {"city_id": str,
+                {"city_id": str,
                     "user_id": str,
                     "name": str,
                     "description": str,
@@ -88,8 +88,8 @@ class FileStorage:
                     "longitude": float,
                     "amenity_ids": list},
             "Review":
-            {"place_id": str,
-                        "user_id": str,
-                        "text": str}
+                {"place_id": str,
+                    "user_id": str,
+                    "text": str}
         }
         return attributes
