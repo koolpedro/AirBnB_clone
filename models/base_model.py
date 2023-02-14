@@ -38,7 +38,7 @@ class BaseModel:
         """Returns official string representation"""
 
         return "[{}] ({}) {}".\
-                format(type(self).__name__, self.id, self.__dict__)
+            format(type(self).__name__, self.id, self.__dict__)
 
     def save(self):
         """returns a dictionary containing all keys/values of __dict__"""
@@ -48,7 +48,6 @@ class BaseModel:
         my_dict["created_at"] = my_dict["created_at"].isoformat()
         my_dict["updated_at"] = my_dict["updated_at"].isoformat()
         return my_dict
-    
 
     def to_dict(self):
         """returns a dictionary containing all keys/values of __dict__"""
