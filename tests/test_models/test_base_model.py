@@ -118,7 +118,7 @@ class TestBaseModel_save(unittest.TestCase):
             sleep(0.05)
             first_updated_at = bm.updated_at
             bm.save()
-            second_updated_at = bm.
+            second_updated_at = bm
             self.assertLess(first_updated_at, second_updated_at)
             sleep(0.05)
             bm.save()
@@ -186,5 +186,5 @@ class TestBaseModel_to_dict(unittest.TestCase):
             with self.assertRaises(TypeError):
                 bm.to_dict(None)
 
-if __name__ == "__main__":
-    unittest.main()
+"""if __name__ == "__main__":
+    unittest.main()"""
