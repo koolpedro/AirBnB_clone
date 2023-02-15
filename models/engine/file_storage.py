@@ -22,9 +22,12 @@ class FileStorage:
 
     def save(self):
         """ serializes __objects to the JSON file (path: __file_path)"""
-        with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
-            d = {k: v.to_dict() for k, v in FileStorage.__objects.items()}
-            json.dump(d, f)
+        try:
+            with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
+                d = {k: v.to_dict() for k, v in FileStorage.__objects.items()}
+                json.dump(d, f)
+        except Exception:
+            pass
 
     def classes(self):
         """Returns a dictionary of valid classes and their references"""
