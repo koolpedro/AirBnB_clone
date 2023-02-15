@@ -202,18 +202,43 @@ class HBNBCommand(cmd.Cmd):
                         cast = float
                     else:
                         cast = int
+                    #Inserting code to replace existing
                 else:
                     value = value.replace('"', '')
                     attributes = storage.attributes()[classname]
                     if attribute in attributes:
+                        print("Existing Attribute")
+                        my_obj = storage.all()[key]
+                        my_obj.__dict__[attribute] = value
+
+                        my_obj.save()
+                    else:
+                        print("New Attribute")
+                        my_obj = storage.all()[key]
+                        my_obj.__dict__[attribute] = value
+
+                        my_obj.save()
+
+                        #End of inserted code
+                        #Hidden code
+                """else:
+                    print("WE ARE MOVING")
+                    value = value.replace('"', '')
+                    attributes = storage.attributes()[classname]
+                    if attribute in attributes:
+                        print("Attribute is in Attributes")
                         value = attributes[attribute](value)
                     elif cast:
+                        print("Attribute is NOT in Attributes")
                         try:
                             value = cast(value)
                         except ValueError:
                             pass  # fine, stay a string then
                         setattr(storage.all()[key], attribute, value)
                         storage.all()[key].save()
+                    else:
+                        print("NOTHING matched")"""
+                        #End of hidden code
 
 
 if __name__ == '__main__':
